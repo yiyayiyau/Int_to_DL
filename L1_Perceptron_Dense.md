@@ -131,3 +131,17 @@ while True:
 	optimizer.apply_gradients(zip(grads, model.trainable_variables))
 
 ```
+### Mini-batches while training
+计算所有点的grandient太慢，可以只计算一部分点。
+* More accurate estimation of gradient
+* Smoother convergence
+* Allows for larger learning rates
+* Mini-batches lead to fast training. 
+* Can parallelize computation + achieve significat spped increases on GPU's.
+
+### The Problem of Overfitting
+#### Regularization正则化1: Dropout
+'drop' 50% of activations in layer
+
+#### Regularization正则化2: Early Stopping
+训练集的损失曲线会持续降低，测试集的损失曲线会先降低后增大。在测试集曲线即将增大的地方中止训练。
